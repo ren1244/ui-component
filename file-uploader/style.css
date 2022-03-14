@@ -1,0 +1,25 @@
+.ren1244-ui-file-uploader{
+    width:320px;
+    height:240px;
+    border:1px solid gray;
+    border-radius:5px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#fff;
+}
+.ren1244-ui-file-uploader>div{
+    text-align:center;
+    display:inline-block;
+}
+.ren1244-ui-file-uploader span{
+    padding:5px 10px;
+    border:1px solid gray;
+    background-color:lightgray;
+    border-radius:5px;
+    color:black;
+    cursor:pointer;
+}
+.ren1244-ui-file-uploader p{
+    color:black;
+}

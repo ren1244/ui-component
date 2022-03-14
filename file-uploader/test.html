@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>檔案上傳元件測試（範例）</title>
+    <script src="../my-component.bundle.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="log"></div>
+    <script>
+        const ct = document.querySelector('#container');
+
+        //在 div#container 中增加 FileUploader 元件
+        const fileUploadr = new MyComponent.FileUploader(ct);
+
+        //監聽 upload-files 做後續處理
+        ct.addEventListener('upload-files', (evt) => {
+            
+            //可以透過 event.detail.files 取得上傳的檔案
+            const files = evt.detail.files;
+
+            const logDiv = document.querySelector('#log');
+            logDiv.innerHTML = `<ul>
+                ${Array.from(files).map(f=>`<li>${f.name} => ${f.size} bytes</li>`).join('')}
+            </ul>`;
+            ;
+        });
+    </script>
+</body>
+</html>
